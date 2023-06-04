@@ -70,7 +70,7 @@ export const weaviateRouter = createTRPCRouter({
             break;
           case "text/csv":
             const csvSplitter = new RecursiveCharacterTextSplitter({
-              separator: ["\n",","],
+              separators: ["\n",","],
               chunkSize: 10000,
               chunkOverlap: 1,
             });

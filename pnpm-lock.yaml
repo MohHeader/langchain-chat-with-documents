@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 dependencies:
   '@aws-sdk/client-s3':
@@ -53,8 +57,8 @@ dependencies:
     specifier: ^10.18.0
     version: 10.18.0
   langchain:
-    specifier: ^0.0.69
-    version: 0.0.69(@aws-sdk/client-s3@3.317.0)(pdf-parse@1.1.1)(weaviate-ts-client@1.1.0)
+    specifier: ^0.0.70
+    version: 0.0.70(@aws-sdk/client-s3@3.317.0)(pdf-parse@1.1.1)(weaviate-ts-client@1.2.0)
   nanoid:
     specifier: ^4.0.2
     version: 4.0.2
@@ -77,8 +81,8 @@ dependencies:
     specifier: 1.12.2
     version: 1.12.2
   weaviate-ts-client:
-    specifier: ^1.1.0
-    version: 1.1.0(graphql@16.6.0)
+    specifier: ^1.2.0
+    version: 1.2.0(graphql@16.6.0)
   zod:
     specifier: ^3.21.4
     version: 3.21.4
@@ -3736,8 +3740,8 @@ packages:
     engines: {node: '>= 8'}
     dev: false
 
-  /langchain@0.0.69(@aws-sdk/client-s3@3.317.0)(pdf-parse@1.1.1)(weaviate-ts-client@1.1.0):
-    resolution: {integrity: sha512-9yVdBLah3PLJ7FOWM55qjjiwfmpYbtTPeD3RdCVU/YrIIM8+goS2o5AagO0RVu4I1Uu6Zs4g8XOZwkpDBIuGtg==}
+  /langchain@0.0.70(@aws-sdk/client-s3@3.317.0)(pdf-parse@1.1.1)(weaviate-ts-client@1.2.0):
+    resolution: {integrity: sha512-QfTbWl3oP8LwiDsLM4pvJQF+MDnf709Okvf4tQKrxf2rUxd9L0Dgli7/sNaQfaR/uZK2NOf/aO106p7I+P3Law==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-lambda': ^3.310.0
@@ -3848,7 +3852,7 @@ packages:
       p-retry: 4.6.2
       pdf-parse: 1.1.1
       uuid: 9.0.0
-      weaviate-ts-client: 1.1.0(graphql@16.6.0)
+      weaviate-ts-client: 1.2.0(graphql@16.6.0)
       yaml: 2.2.1
       zod: 3.21.4
       zod-to-json-schema: 3.20.4(zod@3.21.4)
@@ -5193,8 +5197,8 @@ packages:
     hasBin: true
     dev: false
 
-  /weaviate-ts-client@1.1.0(graphql@16.6.0):
-    resolution: {integrity: sha512-EkIFt3as88uMHBwjDfRWHVUWdHdev5Dgbacf9BDKi9nbL7IZyj9e90Gl2kEwqZi0zIm41ZJ6+Dl4bM8NJvbobw==}
+  /weaviate-ts-client@1.2.0(graphql@16.6.0):
+    resolution: {integrity: sha512-YVt3O3Dj00j51DUHVEK9wUOUtBua8PyINKawYPN8cC1OHPlKNUG/qgYc1REB60WIVMq1SiykXz+8gytlilv9Dw==}
     engines: {node: '>=16.0.0'}
     dependencies:
       graphql-request: 5.2.0(graphql@16.6.0)

@@ -15,7 +15,7 @@ export const wvClient = weaviate.client({
   apiKey: new weaviate.ApiKey(env.WEAVIATE_API_KEY),
 });
 
-const model = new ChatOpenAI({ openAIApiKey: env.OPENAI_API_KEY, modelName: "gpt-3.5-turbo" });
+const model = new ChatOpenAI({ openAIApiKey: env.OPENAI_API_KEY, modelName: "gpt-4" });
 const embeddings = new OpenAIEmbeddings({ openAIApiKey: env.OPENAI_API_KEY });
 
 export const chatRouter = createTRPCRouter({

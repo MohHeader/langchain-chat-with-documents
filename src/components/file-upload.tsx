@@ -10,6 +10,7 @@ const acceptedFiles = {
   [MIME_TYPES.doc]: [".doc"],
   [MIME_TYPES.docx]: [".docx"],
   "text/plain": [".txt"],
+  "text/csv": [".csv"],
 };
 
 function FileUpload(props: Partial<DropzoneProps>) {
@@ -35,7 +36,7 @@ function FileUpload(props: Partial<DropzoneProps>) {
         </Dropzone.Idle>
         <Text size="sm">Drag document here or click to select file</Text>
         <Text size="xs" color="dimmed">
-          Only pdf, doc, docx, txt files are allowed
+          Only pdf, doc, docx, txt, csv files are allowed
         </Text>
       </Stack>
     </Dropzone>

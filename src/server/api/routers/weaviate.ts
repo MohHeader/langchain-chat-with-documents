@@ -50,6 +50,9 @@ export const weaviateRouter = createTRPCRouter({
           case "text/plain":
             Loader = TextLoader;
             break;
+          case "text/csv":
+            Loader = TextLoader;
+            break;
           default:
             throw new TRPCError({
               code: "INTERNAL_SERVER_ERROR",
@@ -59,9 +62,24 @@ export const weaviateRouter = createTRPCRouter({
 
         const loader = new Loader(blob);
         const rawDocs = await loader.load();
-        const needsSplitting = contentType === "text/plain";
-        const textSplitter = new RecursiveCharacterTextSplitter();
-        const docs = needsSplitting ? await textSplitter.splitDocuments(rawDocs) : rawDocs;
+        let docs = rawDocs;
+        switch (contentType){
+          case "text/plain":
+            const textSplitter = new RecursiveCharacterTextSplitter();
+            docs = await textSplitter.splitDocuments(rawDocs);
+            break;
+          case "text/csv":
+            const csvSplitter = new RecursiveCharacterTextSplitter({
+              separator: ["\n",","],
+              chunkSize: 10000,
+              chunkOverlap: 1,
+            });
+            docs = await csvSplitter.splitDocuments(rawDocs);
+            break;
+          default:
+            break;
+        }
+        
         const formattedDocs = docs.map((doc) => transformDoc(doc, { userId, name }));
 
         await WeaviateStore.fromDocuments(formattedDocs, embeddings, {
